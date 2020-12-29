@@ -1,5 +1,78 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
 
+/*BAR*/
+nav {
+  z-index: 100;
+}
+
+.nav__tab {
+  display: flex;
+  margin: 0;
+  padding: 5px 20px 0;
+  list-style: none;
+  color: #c2c2c2;
+  font-size: 14px;
+  line-height: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.nav__tab li {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.nav__tab li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #ef8a8b;
+  transition: transform 300ms;
+}
+
+.nav__tab li:first-child::after {
+  transform: translate(100%, 0);
+}
+
+.nav__tab li:last-child::after {
+  transform: translate(-100%, 0);
+}
+
+.nav__tab li.active {
+  color: #ef8a8b;
+}
+
+.nav__tab li.active::after {
+  transform: translate(0, 0);
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+main .content {
+  box-sizing: border-box;
+  width: 100%;
+  flex-shrink: 0;
+  /*overflow-y: scroll;*/
+  transition: transform 300ms;
+}
+
+main.ttt .content {
+  transform: translate(-100%, 0);
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -592,3 +665,4 @@ fieldset[disabled] .btn {
           box-shadow: none;
   opacity: .65;
 }
+

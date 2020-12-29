@@ -3,384 +3,819 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="js/My_JS.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
     <link href="css/My_style.css" rel="stylesheet" type="text/css">
     </head>
 
 <body>
-  <!--左半部-->
-<div class="resume">
-   <div class="resume_left">
-     <div class="resume_profile">
-       <img src="img/me.jpg" alt="profile_pic">
-     </div>
-     <div class="resume_content">
-       <div class="resume_item resume_info">
-         <div class="title">
-           <p class="bold">彭倧輢</p>
-           <p class="bold">Tsung Chi Peng</p>
-           <p class="regular">網頁工程師 / 專案經理</p>
+
+  <div class="phone" id="app">
+    <!-- 導航列 -->
+    <nav>
+        <ul class="nav__tab">
+            <li :class="{ active: !isEng }"
+                @click="toggleTab(false)">中文</li>
+            <li :class="{ active: isEng }"
+                @click="toggleTab(true)">Engilish</li>
+        </ul>
+    </nav>
+  
+<main :class="{ ttt: isEng }">
+  <div class="content">
+    <div class="resume">
+      <!--左半部-->
+       <div class="resume_left">
+         <div class="resume_profile">
+           <img src="img/me.jpg" alt="profile_pic">
          </div>
-         <ul>
-           <li>
-             <div class="icon">
-               <i class="fas fa-map-signs"></i>
+         <div class="resume_content">
+           <div class="resume_item resume_info">
+             <div class="title">
+               <p class="bold">彭倧輢</p>
+               <p class="regular">網頁工程師 / 專案經理</p>
              </div>
-             <div class="data">
-               Dali, Taichung <br /> Taiwan
-             </div>
-           </li>
-           <li>
-             <div class="icon">
-               <i class="fas fa-mobile-alt"></i>
-             </div>
-             <div class="data">
-               (+886) 980-688-395
-             </div>
-           </li>
-           <li>
-             <div class="icon">
-               <i class="fas fa-envelope"></i>
-             </div>
-             <div class="data">
-               wxes9360711@gmail.com
-             </div>
-           </li>
-         </ul>
-       </div>
-       <div class="resume_item resume_skills">
-         <div class="title">
-           <p class="bold">專案管理</p>
-         </div>
-         <ul>
-           <li>
-             <div class="skill_name">
-               Kanban
-             </div>
-             <div class="skill_progress">
-               <span style="width: 90%;"></span>
-             </div>
-             <div class="skill_per">90%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               Scrum
-             </div>
-             <div class="skill_progress">
-               <span class="test" style="width: 60%;"></span>
-             </div>
-             <div class="skill_per">60%</div>
-           </li>
-         </ul>
-       </div>
-       <!--前端技能-->
-       <div class="resume_item resume_skills">
-         <div class="title">
-           <p class="bold">前端技能</p>
-         </div>
-         <ul>
-           <li>
-             <div class="skill_name">
-               HTML
-             </div>
-             <div class="skill_progress">
-               <span style="width: 100%;"></span>
-             </div>
-             <div class="skill_per">100%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               CSS
-             </div>
-             <div class="skill_progress">
-               <span style="width: 90%;"></span>
-             </div>
-             <div class="skill_per">90%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               JS/JQuery
-             </div>
-             <div class="skill_progress">
-               <span style="width: 80%;"></span>
-             </div>
-             <div class="skill_per">80%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               Vue
-             </div>
-             <div class="skill_progress">
-               <span style="width: 80%;"></span>
-             </div>
-             <div class="skill_per">80%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               React
-             </div>
-             <div class="skill_progress">
-               <span style="width: 60%;"></span>
-             </div>
-             <div class="skill_per">60%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               Bootstrap
-             </div>
-             <div class="skill_progress">
-               <span style="width: 90%;"></span>
-             </div>
-             <div class="skill_per">90%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               W3 CSS
-             </div>
-             <div class="skill_progress">
-               <span style="width: 100%;"></span>
-             </div>
-             <div class="skill_per">100%</div>
-           </li>
-         </ul>
-       </div>
-       <!--後端既能-->
-       <div class="resume_item resume_skills">
-         <div class="title">
-           <p class="bold">後端技能</p>
-         </div>
-         <ul>
-           <li>
-             <div class="skill_name">
-               GOLAN
-             </div>
-             <div class="skill_progress">
-               <span style="width: 75%;"></span>
-             </div>
-             <div class="skill_per">75%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               JAVA
-             </div>
-             <div class="skill_progress">
-               <span class="test" style="width: 55%;"></span>
-             </div>
-             <div class="skill_per">55%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               C#
-             </div>
-             <div class="skill_progress">
-               <span class="test" style="width: 50%;"></span>
-             </div>
-             <div class="skill_per">50%</div>
-           </li>
-         </ul>
-       </div>
-       <!--資料庫技能-->
-       <div class="resume_item resume_skills">
-         <div class="title">
-           <p class="bold">資料庫</p>
-         </div>
-         <ul>
-           <li>
-             <div class="skill_name">
-               MySQL
-             </div>
-             <div class="skill_progress">
-               <span style="width: 85%;"></span>
-             </div>
-             <div class="skill_per">85%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               MSSQL
-             </div>
-             <div class="skill_progress">
-               <span class="test" style="width: 80%;"></span>
-             </div>
-             <div class="skill_per">80%</div>
-           </li>
-         </ul>
-       </div> 
-     </div>
-    </div>
-    <!--右半部-->
-    <div class="resume_right">
-      <!--工作經歷-->
-      <div class="resume_item resume_work">
-          <div class="title">
-             <p class="bold">工作經歷</p>
+             <ul>
+               <li>
+                 <div class="icon">
+                   <i class="fas fa-map-signs"></i>
+                 </div>
+                 <div class="data">
+                   Dali, Taichung <br /> Taiwan
+                 </div>
+               </li>
+               <li>
+                 <div class="icon">
+                   <i class="fas fa-mobile-alt"></i>
+                 </div>
+                 <div class="data">
+                   (+886) 980-688-395
+                 </div>
+               </li>
+               <li>
+                 <div class="icon">
+                   <i class="fas fa-envelope"></i>
+                 </div>
+                 <div class="data">
+                   wxes9360711@gmail.com
+                 </div>
+               </li>
+             </ul>
            </div>
-          <ul>
-              <li>
-                <div class="info">
-                      <p class="semi-bold">協鴻工業股份有限公司 專案招集人</p> 
-                  </div>
-                  <div class="date">Sep 2019 - Present</div> 
-                  <BR>
-              </li>
-              <li>
-                <div class="info">
-                      <p class="semi-bold">協鴻工業股份有限公司 全端工程師</p> 
-                  </div>
-                  <div class="date">Sep 2017 - Sep 2019</div> 
-                  <BR>
-              </li>
-              <li>
-                  <div class="info">
-                      <p class="semi-bold">元緒科技股份有限公司 產學合作</p> 
-                  </div>
-                  <div class="date">Aug 2016 - Sep 2017</div> 
-                  <BR>
-              </li>
-              <li>
-                <div class="info">
-                      <p class="semi-bold">科技部專題計畫(MOST-104-2221-E-029-009) 參與製作</p> 
-                  </div>
-                  <div class="date">Nov 2016 - Sep 2017</div>
-                  <BR>
-              </li>
-          </ul>
-      </div>
-      <!--學歷-->
-      <div class="resume_item resume_education">
-        <div class="title">
-             <p class="bold">學歷</p>
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">專案管理</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   Kanban
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 90%;"></span>
+                 </div>
+                 <div class="skill_per">90%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   Scrum
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 60%;"></span>
+                 </div>
+                 <div class="skill_per">60%</div>
+               </li>
+             </ul>
            </div>
-        <ul>
-              <li>
-                <div class="info">
-                      <p class="semi-bold">東海大學 資訊工程研究所</p> 
-                  </div>
-                  <div class="date">Sep 2015 - Sep 2017</div> 
-                  <BR>
-              </li>
-              <li>
-                  <div class="info">
-                      <p class="semi-bold">東海大學 資訊工程系-資電組</p> 
-                  </div>              
-                  <div class="date">Sep 2011 - Jun 2015</div>
-                  <BR>
-              </li>
-          </ul>
-      </div>
-      <!--論文獲獎-->
-      <div class="resume_item resume_education">
-        <div class="title">
-          <p class="bold">論文獲獎</p>
+           <!--前端技能-->
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">前端技能</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   HTML
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 100%;"></span>
+                 </div>
+                 <div class="skill_per">100%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   CSS
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 90%;"></span>
+                 </div>
+                 <div class="skill_per">90%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   JS/JQuery
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 80%;"></span>
+                 </div>
+                 <div class="skill_per">80%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   Vue
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 80%;"></span>
+                 </div>
+                 <div class="skill_per">80%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   React
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 60%;"></span>
+                 </div>
+                 <div class="skill_per">60%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   Bootstrap
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 90%;"></span>
+                 </div>
+                 <div class="skill_per">90%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   W3 CSS
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 100%;"></span>
+                 </div>
+                 <div class="skill_per">100%</div>
+               </li>
+             </ul>
+           </div>
+           <!--後端既能-->
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">後端技能</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   GOLAN
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 75%;"></span>
+                 </div>
+                 <div class="skill_per">75%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   JAVA
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 55%;"></span>
+                 </div>
+                 <div class="skill_per">55%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   C#
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 50%;"></span>
+                 </div>
+                 <div class="skill_per">50%</div>
+               </li>
+             </ul>
+           </div>
+           <!--資料庫技能-->
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">資料庫</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   MySQL
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 85%;"></span>
+                 </div>
+                 <div class="skill_per">85%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   MSSQL
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 80%;"></span>
+                 </div>
+                 <div class="skill_per">80%</div>
+               </li>
+             </ul>
+           </div> 
+         </div>
+        </div>
+        <!--右半部-->
+        <div class="resume_right">
+          <!--工作經歷-->
+          <div class="resume_item resume_work">
+              <div class="title">
+                 <p class="bold">工作經歷</p>
+               </div>
+              <ul>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">協鴻工業股份有限公司 專案招集人</p> 
+                      </div>
+                      <div class="date">Sep 2019 - Present</div> 
+                      <BR>
+                  </li>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">協鴻工業股份有限公司 全端工程師</p> 
+                      </div>
+                      <div class="date">Sep 2017 - Sep 2019</div> 
+                      <BR>
+                  </li>
+                  <li>
+                      <div class="info">
+                          <p class="semi-bold">元緒科技股份有限公司 產學合作</p> 
+                      </div>
+                      <div class="date">Aug 2016 - Sep 2017</div> 
+                      <BR>
+                  </li>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">科技部專題計畫(MOST-104-2221-E-029-009) 參與製作</p> 
+                      </div>
+                      <div class="date">Nov 2016 - Sep 2017</div>
+                      <BR>
+                  </li>
+              </ul>
           </div>
-          <img src="img/award.jpg" alt="award_pic" style="width: 80%;">
-          <div style="width: 80%; text-align: center;">
-            <p>國際會議 ICASI 2017 FIRST PRIZE PAPER AWARD</p>
-            <p>技術: R Language, JAVA, Python, Hadoop</p>
+          <!--學歷-->
+          <div class="resume_item resume_education">
+            <div class="title">
+                 <p class="bold">學歷</p>
+               </div>
+            <ul>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">東海大學 資訊工程研究所</p> 
+                      </div>
+                      <div class="date">Sep 2015 - Sep 2017</div> 
+                      <BR>
+                  </li>
+                  <li>
+                      <div class="info">
+                          <p class="semi-bold">東海大學 資訊工程系-資電組</p> 
+                      </div>              
+                      <div class="date">Sep 2011 - Jun 2015</div>
+                      <BR>
+                  </li>
+              </ul>
+          </div>
+          <!--論文獲獎-->
+          <div class="resume_item resume_education">
+            <div class="title">
+              <p class="bold">論文獲獎</p>
+              </div>
+              <img src="img/award.jpg" alt="award_pic" style="width: 80%;">
+              <div style="width: 80%; text-align: center;">
+                <p>國際會議 ICASI 2017 FIRST PRIZE PAPER AWARD</p>
+                <p>技術: R Language, JAVA, Python, Hadoop</p>
+
+              </div>
+          </div>
+          <!--成果與作品-->
+          <div class="resume_item resume_education">
+              <div class="title">
+                  <p class="bold">成果與作品</p>
+            </div>
+
+            <!--CARD 自動化-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/auto_system.png">
+              <div class="card-body">
+                <h2 class="card-title">模具自動化產線建置</h2>
+                <h4>Sep 2019 - Present</h4>
+                <p class="card-text">
+                  1. 主導並完成價值上千萬的大型自動化專案<BR>
+                  2. 了解實際客戶需求, 並依照客戶需求討論與規劃系統<BR>
+                  3. 評估並規劃產線開發需求及時程, 且監督開發進度<BR>
+                  4. 擔任客戶及廠商間的調停者, 並妥善安排現場作業<BR>
+                  5. 確保產品皆能滿足客乎需求, 蒐集問題並討論調整
+                </p>
+              </div>
+            </div>
+            <!--CARD i-Factory-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/ifactory.png">
+              <div class="card-body">
+                <h2 class="card-title">協鴻i-Factory系統</h2>
+                <h4>Sep 2017 - Present</h4>
+                <p class="card-text">
+                  使用技術: GOLANG MVC架構, Vue JS, W3 CSS, ECharts, Scada, MySQL<BR>
+                  成果: <BR>
+                  1. 提升整體工廠運作效率30%<BR>
+                  2. 讓工廠機台稼動率達到最佳化<BR>
+                  3. 提升工廠管理效率50%<BR>
+                  工作內容: <BR>
+                  1. 了解工具機工廠型態進行規劃與設計開發<BR>
+                  2. 產品行銷與設計介紹<BR>
+                  3. 客戶現場安裝與教育訓練<BR>
+                  4. 產品各項售後服務<BR>
+                  5. 產品銷售檢討與改善
+                </p><BR>
+                <a href="http://i-factory-demo.hartford.com.tw:81/view/mobile.html" class="btn btn-primary">來去看看</a>
+              </div>
+            </div>
+            <!--CARD 台北展行銷-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/Taipei.png">
+              <div class="card-body">
+                <h2 class="card-title">台北國際工具機展(TIMTOS)形象網站</h2>
+                <h4> Jan 2019 - Feb 2019</h4>
+                <p class="card-text">
+                  使用技術: GOLANG, Boostrap, ECharts, JQuery <BR>
+                  成果:<BR>
+                  1. 協助業務銷售產品<BR>
+                  2. 於TIMTOS期間銷售達7300萬<BR>
+                  工作內容: <BR>
+                  1. 網頁設計與開發<BR>
+                  2. 伺服器建立與壓力測試<BR>
+                </p>
+                <BR>
+                <a href="https://i-factory-demo.hartford.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
+              </div>
+            </div>
+            <!--售服FAQ-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/callcenter.png">
+              <div class="card-body">
+                <h2 class="card-title">協鴻售服FAQ及問題回報系統</h2>
+                <h4> May 2019 - Present</h4>
+                <p class="card-text">
+                  使用技術: GOLANG MVC架構, Vue JS, Boostrap, MSSQL<BR>
+                  成果:<BR>
+                  1. 提升售服主管管理效率20%並降低遺漏案100%<BR>
+                  2. 節省相關資料查詢時間30%, 提升作業效率<BR>
+                  3. 減少信件以及電話上的往來量20%<BR>
+                  工作內容: <BR>
+                  1. 創意發想與提案<BR>
+                  2. 需求整理並依照需求設計開發網站<BR>
+                  3. 網站架設與壓力測試<BR>
+                </p>
+                <BR>
+                <a href="http://service.machiningcenter.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
+              </div>
+            </div>
+            <!--CARD 客戶拜訪-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/customer.png">
+              <div class="card-body">
+                <h2 class="card-title">客戶拜訪</h2>
+                <h4> Jan 2018 - Dec 2019</h4>
+                <p class="card-text">
+                  1. 了解客戶需求並改善提升客戶滿意度<BR>
+                  2. 依照客戶需求進行統整及系統修改<BR>
+                </p>
+              </div>
+            </div>
+            <!--CARD 各式網頁需求開發-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/allweb.png" alt="Card image cap">
+              <div class="card-body">
+                <h2 class="card-title">協鴻需求形象網頁開發</h2>
+                <h4> Sep 2017 - Present</h4>
+                <p class="card-text">
+                  1. 配合公司需求開發各式形象網頁<BR>
+                  2. 創辦人紀念館, App Store, 台中展...等等
+                </p>
+                <BR>
+                <a href="http://appstore.hartford.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
+              </div>
+            </div> 
+            <!--CARD END-->
 
           </div>
-      </div>
-      <!--成果與作品-->
-      <div class="resume_item resume_education">
-          <div class="title">
-              <p class="bold">成果與作品</p>
-        </div>
 
-        <!--CARD 自動化-->
-        <div class="card mb-3">
-          <img class="card-img-top blog-card" src="img/auto_system.png">
-          <div class="card-body">
-            <h2 class="card-title">模具自動化產線建置</h2>
-            <h4>Sep 2019 - Present</h4>
-            <p class="card-text">
-              1. 了解實際客戶需求, 並依照客戶需求規劃及設計系統<BR>
-              2. 評估並規劃產線開發需求及時程, 且監督開發進度<BR>
-              3. 擔任客戶及廠商間的調停者, 並妥善安排現場作業<BR>
-              4. 確保產品皆能滿足客乎需求, 蒐集問題並討論調整
-            </p>
-          </div>
         </div>
-        <!--CARD i-Factory-->
-        <div class="card mb-3">
-          <img class="card-img-top blog-card" src="img/ifactory.png">
-          <div class="card-body">
-            <h2 class="card-title">協鴻i-Factory系統</h2>
-            <h4>Sep 2017 - Present</h4>
-            <p class="card-text">
-              使用技術: GOLANG MVC架構, Vue JS, W3 CSS, ECharts, Scada, MySQL<BR>
-              工作內容: <BR>
-              1. 了解工具機工廠型態進行規劃與設計開發<BR>
-              2. 產品行銷與設計介紹<BR>
-              3. 客戶現場安裝與教育訓練<BR>
-              4. 產品各項售後服務<BR>
-              5. 產品銷售檢討與改善
-            </p><BR>
-            <a href="http://i-factory-demo.hartford.com.tw:81/view/mobile.html" class="btn btn-primary">來去看看</a>
-          </div>
-        </div>
-        <!--CARD 台北展行銷-->
-        <div class="card mb-3">
-          <img class="card-img-top blog-card" src="img/Taipei.png">
-          <div class="card-body">
-            <h2 class="card-title">台北國際工具機展(TIMTOS)形象網站</h2>
-            <h4> Jan 2019 - Feb 2019</h4>
-            <p class="card-text">
-              使用技術: GOLANG, Boostrap, ECharts, JQuery <BR>
-              工作內容: <BR>
-              1. 網頁設計與開發<BR>
-              2. 伺服器建立與壓力測試<BR>
-            </p>
-            <BR>
-            <a href="https://i-factory-demo.hartford.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
-          </div>
-        </div>
-        <!--售服FAQ-->
-        <div class="card mb-3">
-          <img class="card-img-top blog-card" src="img/callcenter.png">
-          <div class="card-body">
-            <h2 class="card-title">協鴻售服FAQ及問題回報系統</h2>
-            <h4> May 2019 - Present</h4>
-            <p class="card-text">
-              使用技術: GOLANG MVC架構, Vue JS, Boostrap, MSSQL<BR>
-              工作內容: <BR>
-              1. 創意發想與提案<BR>
-              2. 需求整理並依照需求設計開發網站<BR>
-              3. 網站架設與壓力測試<BR>
-            </p>
-            <BR>
-            <a href="http://service.machiningcenter.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
-          </div>
-        </div>
-        <!--CARD 客戶拜訪-->
-        <div class="card mb-3">
-          <img class="card-img-top blog-card" src="img/customer.png">
-          <div class="card-body">
-            <h2 class="card-title">客戶拜訪</h2>
-            <h4> Jan 2018 - Dec 2019</h4>
-            <p class="card-text">
-              1. 實地拜訪客戶了解客戶使用狀況<BR>
-              2. 依照客戶需求進行統整及系統修改<BR>
-            </p>
-          </div>
-        </div>
-        <!--CARD 各式網頁需求開發-->
-        <div class="card mb-3">
-          <img class="card-img-top blog-card" src="img/allweb.png" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">協鴻需求形象網頁開發</h2>
-            <h4> Sep 2017 - Present</h4>
-            <p class="card-text">
-              1. 配合公司需求開發各式形象網頁<BR>
-              2. 創辦人紀念館, App Store, 台中展...等等
-            </p>
-            <BR>
-            <a href="http://appstore.hartford.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
-          </div>
-        </div> 
-        <!--CARD END-->
-
-      </div>
-
     </div>
+  </div>
+
+  <div class="content">
+    <div class="resume">
+      <!--左半部-->
+       <div class="resume_left">
+         <div class="resume_profile">
+           <img src="img/me.jpg" alt="profile_pic">
+         </div>
+         <div class="resume_content">
+           <div class="resume_item resume_info">
+             <div class="title">
+               <p class="bold">Tsung Chi Peng</p>
+               <p class="regular">Web Engineer / Project Manager</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="icon">
+                   <i class="fas fa-map-signs"></i>
+                 </div>
+                 <div class="data">
+                   Dali, Taichung <br /> Taiwan
+                 </div>
+               </li>
+               <li>
+                 <div class="icon">
+                   <i class="fas fa-mobile-alt"></i>
+                 </div>
+                 <div class="data">
+                   (+886) 980-688-395
+                 </div>
+               </li>
+               <li>
+                 <div class="icon">
+                   <i class="fas fa-envelope"></i>
+                 </div>
+                 <div class="data">
+                   wxes9360711@gmail.com
+                 </div>
+               </li>
+             </ul>
+           </div>
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">Project Manage</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   Kanban
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 90%;"></span>
+                 </div>
+                 <div class="skill_per">90%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   Scrum
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 60%;"></span>
+                 </div>
+                 <div class="skill_per">60%</div>
+               </li>
+             </ul>
+           </div>
+           <!--前端技能-->
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">Front end Skills</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   HTML
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 100%;"></span>
+                 </div>
+                 <div class="skill_per">100%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   CSS
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 90%;"></span>
+                 </div>
+                 <div class="skill_per">90%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   JS/JQuery
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 80%;"></span>
+                 </div>
+                 <div class="skill_per">80%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   Vue
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 80%;"></span>
+                 </div>
+                 <div class="skill_per">80%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   React
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 60%;"></span>
+                 </div>
+                 <div class="skill_per">60%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   Bootstrap
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 90%;"></span>
+                 </div>
+                 <div class="skill_per">90%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   W3 CSS
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 100%;"></span>
+                 </div>
+                 <div class="skill_per">100%</div>
+               </li>
+             </ul>
+           </div>
+           <!--後端既能-->
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">Back end skills</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   GOLAN
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 75%;"></span>
+                 </div>
+                 <div class="skill_per">75%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   JAVA
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 55%;"></span>
+                 </div>
+                 <div class="skill_per">55%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   C#
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 50%;"></span>
+                 </div>
+                 <div class="skill_per">50%</div>
+               </li>
+             </ul>
+           </div>
+           <!--資料庫技能-->
+           <div class="resume_item resume_skills">
+             <div class="title">
+               <p class="bold">SQL Skills</p>
+             </div>
+             <ul>
+               <li>
+                 <div class="skill_name">
+                   MySQL
+                 </div>
+                 <div class="skill_progress">
+                   <span style="width: 85%;"></span>
+                 </div>
+                 <div class="skill_per">85%</div>
+               </li>
+               <li>
+                 <div class="skill_name">
+                   MSSQL
+                 </div>
+                 <div class="skill_progress">
+                   <span class="test" style="width: 80%;"></span>
+                 </div>
+                 <div class="skill_per">80%</div>
+               </li>
+             </ul>
+           </div> 
+         </div>
+        </div>
+        <!--右半部-->
+        <div class="resume_right">
+          <!--工作經歷-->
+          <div class="resume_item resume_work">
+              <div class="title">
+                 <p class="bold">Works Exprience</p>
+               </div>
+              <ul>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">SHE HONG INDUSTRIAL CO. LTD <BR>Project Manager</p> 
+                      </div>
+                      <div class="date">Sep 2019 - Present</div> 
+                      <BR>
+                  </li>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">SHE HONG INDUSTRIAL CO. LTD <BR>Full Stack Engineer</p> 
+                      </div>
+                      <div class="date">Sep 2017 - Sep 2019</div> 
+                      <BR>
+                  </li>
+                  <li>
+                      <div class="info">
+                          <p class="semi-bold">SYNCTHREADS TECHNOLOGY INC. <BR>Industry-Academy Cooperation</p> 
+                      </div>
+                      <div class="date">Aug 2016 - Sep 2017</div> 
+                      <BR>
+                  </li>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">MOST Research Project(MOST-104-2221-E-029-009) <BR>Participate in completion</p> 
+                      </div>
+                      <div class="date">Nov 2016 - Sep 2017</div>
+                      <BR>
+                  </li>
+              </ul>
+          </div>
+          <!--學歷-->
+          <div class="resume_item resume_education">
+            <div class="title">
+                 <p class="bold">Education</p>
+               </div>
+            <ul>
+                  <li>
+                    <div class="info">
+                          <p class="semi-bold">Tunghai University<BR>Master of The Department of Computer Science and Information Engineering</p> 
+                      </div>
+                      <div class="date">Sep 2015 - Sep 2017</div> 
+                      <BR>
+                  </li>
+                  <li>
+                      <div class="info">
+                          <p class="semi-bold">Tunghai University<BR> Bachelor of The Department of Computer Science and Information Engineering </p> 
+                      </div>              
+                      <div class="date">Sep 2011 - Jun 2015</div>
+                      <BR>
+                  </li>
+              </ul>
+          </div>
+          <!--論文獲獎-->
+          <div class="resume_item resume_education">
+            <div class="title">
+              <p class="bold">Paper Award</p>
+              </div>
+              <img src="img/award.jpg" alt="award_pic" style="width: 80%;">
+              <div style="width: 80%; text-align: center;">
+                <p>ICASI 2017 FIRST PRIZE PAPER AWARD</p>
+                <p>SKILLS: R Language, JAVA, Python, Hadoop</p>
+
+              </div>
+          </div>
+          <!--成果與作品-->
+          <div class="resume_item resume_education">
+              <div class="title">
+                  <p class="bold">Achievement Display</p>
+            </div>
+
+            <!--CARD 自動化-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/auto_system.png">
+              <div class="card-body">
+                <h2 class="card-title">Completed the Auto. production line of die & mold indurstry </h2>
+                <h4>Sep 2019 - Present</h4>
+                <p class="card-text">
+                  1. Lead and complete large-scale automation projects worth tens of millions.<BR>
+                  2. Understand actual customer needs, and discuss and plan the system according to customer needs.<BR>
+                  3. Evaluate and plan production line development requirements and schedule.<BR>
+                  4. Act as the mediator between customers and manufacturers, and properly arrange on-site operations.<BR>
+                  5. Ensure that all products can meet customer needs, collect questions and discuss adjustments.
+                </p>
+              </div>
+            </div>
+            <!--CARD i-Factory-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/ifactory.png">
+              <div class="card-body">
+                <h2 class="card-title">Hartfod I-Factory System</h2>
+                <h4>Sep 2017 - Present</h4>
+                <p class="card-text">
+                  SKILLD: GOLANG MVC structure, Vue JS, W3 CSS, ECharts, Scada, MySQL<BR>
+                  Achievement: <BR>
+                  1. Improve overall factory operation efficiency by 30%.<BR>
+                  2. Optimize the utilization rate of factory machines.<BR>
+                  3. Improve factory management efficiency by 50%.<BR>
+                  Contents: <BR>
+                  1. Understand the type of machine tool factory for planning, design and development.<BR>
+                  2. Introduction to Product Marketing and Design.<BR>
+                  3. Customer installation and training.<BR>
+                  4. Product after-sales service.<BR>
+                  5. Product sales review and improvement.
+                </p><BR>
+                <a href="http://i-factory-demo.hartford.com.tw:81/view/mobile.html" class="btn btn-primary">See it</a>
+              </div>
+            </div>
+            <!--CARD 台北展行銷-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/Taipei.png">
+              <div class="card-body">
+                <h2 class="card-title">Taipei Int'l Machine Tool Show(TIMTOS) Website</h2>
+                <h4> Jan 2019 - Feb 2019</h4>
+                <p class="card-text">
+                  SKILLS: GOLANG, Boostrap, ECharts, JQuery <BR>
+                  Achievement:<BR>
+                  1. Assist the business to sell products.<BR>
+                  2. Sales reached 73 million during TIMTOS.<BR>
+                  Contents:  <BR>
+                  1. Web design and development.<BR>
+                  2. Server creation and stress testing.<BR>
+                </p>
+                <BR>
+                <a href="https://i-factory-demo.hartford.com.tw/view/index.html" class="btn btn-primary">See it</a>
+              </div>
+            </div>
+            <!--售服FAQ-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/callcenter.png">
+              <div class="card-body">
+                <h2 class="card-title">Hartford FAQ & Report System</h2>
+                <h4> May 2019 - Present</h4>
+                <p class="card-text">
+                  SKILLS: GOLANG MVC structure, Vue JS, Boostrap, MSSQL<BR>
+                  Achievement:<BR>
+                  1. Improve the management efficiency of sales service supervisors by 20% and reduce omissions by 100%.<BR>
+                  2. Save 30% of relevant data query time and improve work efficiency.<BR>
+                  3. Reduce the volume of correspondence and phone calls by 20%.<BR>
+                  Contents: <BR>
+                  1. Creative ideas and proposals.<BR>
+                  2. Organize requirements and design the websites according to requirements.<BR>
+                  3. Server creation and stress testing.<BR>
+                </p>
+                <BR>
+                <a href="http://service.machiningcenter.com.tw/view/index.html" class="btn btn-primary">See it</a>
+              </div>
+            </div>
+            <!--CARD 客戶拜訪-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/customer.png">
+              <div class="card-body">
+                <h2 class="card-title">Customer Visit</h2>
+                <h4> Jan 2018 - Dec 2019</h4>
+                <p class="card-text">
+                  1. Understand customer needs and improve customer satisfaction.<BR>
+                  2. Integrate and modify the system according to customer needs.<BR>
+                </p>
+              </div>
+            </div>
+            <!--CARD 各式網頁需求開發-->
+            <div class="card mb-3">
+              <img class="card-img-top blog-card" src="img/allweb.png" alt="Card image cap">
+              <div class="card-body">
+                <h2 class="card-title">Hartford Website Development</h2>
+                <h4> Sep 2017 - Present</h4>
+                <p class="card-text">
+                  1. Develop websites to coodinate of the company.<BR>
+                  2. Chairman memorial hall, App Store, Taichung Show...etc
+                </p>
+                <BR>
+                <a href="http://appstore.hartford.com.tw/view/index.html" class="btn btn-primary">See it</a>
+              </div>
+            </div> 
+            <!--CARD END-->
+
+          </div>
+
+        </div>
+    </div>
+  </div>
+</main>
 </div>
+<script>
+  new Vue ({
+    el: "#app",
+    data: {
+        isEng: false,
+    },
+    methods: {
+
+        toggleTab (eng) {
+            this.isEng = eng
+        },
+
+    },
+    computed: {
+
+    },
+})
+</script>
 
 
 </body>

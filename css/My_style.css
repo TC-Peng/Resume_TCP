@@ -33,7 +33,7 @@ nav {
   right: 0;
   bottom: 0;
   height: 2px;
-  background: #ef8a8b;
+  background: #00BFFF;
   transition: transform 300ms;
 }
 
@@ -46,7 +46,7 @@ nav {
 }
 
 .nav__tab li.active {
-  color: #ef8a8b;
+  color: #00BFFF;
 }
 
 .nav__tab li.active::after {

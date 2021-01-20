@@ -333,7 +333,7 @@
                   4. 產品各項售後服務<BR>
                   5. 產品銷售檢討與改善
                 </p><BR>
-                <a href="http://i-factory-demo.hartford.com.tw:81/view/mobile.html" class="btn btn-primary">來去看看</a>
+                <a href="http://i-factory-demo.hartford.com.tw:81/view/mobile.html" class="btn btn-primary" :disabled="open">來去看看</a>
               </div>
             </div>
             <!--CARD 台北展行銷-->
@@ -352,7 +352,7 @@
                   2. 伺服器建立與壓力測試<BR>
                 </p>
                 <BR>
-                <a href="https://i-factory-demo.hartford.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
+                <a href="https://i-factory-demo.hartford.com.tw/view/index.html" class="btn btn-primary" :disabled="open">來去看看</a>
               </div>
             </div>
             <!--售服FAQ-->
@@ -373,7 +373,7 @@
                   3. 網站架設與壓力測試<BR>
                 </p>
                 <BR>
-                <a href="http://service.machiningcenter.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
+                <a href="http://service.machiningcenter.com.tw/view/index.html" class="btn btn-primary" :disabled="open">來去看看</a>
               </div>
             </div>
             <!--CARD 客戶拜訪-->
@@ -399,7 +399,7 @@
                   2. 創辦人紀念館, App Store, 台中展...等等
                 </p>
                 <BR>
-                <a href="http://appstore.hartford.com.tw/view/index.html" class="btn btn-primary">來去看看</a>
+                <a href="http://appstore.hartford.com.tw/view/index.html" class="btn btn-primary" :disabled="open">來去看看</a>
               </div>
             </div> 
             <!--CARD END-->
@@ -721,7 +721,7 @@
                   4. After-sales service.<BR>
                   5. Product sales review and improvement.
                 </p><BR>
-                <a href="http://i-factory-demo.hartford.com.tw:81/view/mobile.html" class="btn btn-primary">See it</a>
+                <a href="http://i-factory-demo.hartford.com.tw:81/view/mobile.html" class="btn btn-primary" :disabled="open">See it</a>
               </div>
             </div>
             <!--CARD 台北展行銷-->
@@ -740,7 +740,7 @@
                   2. Server creation and stress testing.<BR>
                 </p>
                 <BR>
-                <a href="https://i-factory-demo.hartford.com.tw/view/index.html" class="btn btn-primary">See it</a>
+                <a href="https://i-factory-demo.hartford.com.tw/view/index.html" class="btn btn-primary" :disabled="open">See it</a>
               </div>
             </div>
             <!--售服FAQ-->
@@ -761,7 +761,7 @@
                   3. Server creation and stress testing.<BR>
                 </p>
                 <BR>
-                <a href="http://service.machiningcenter.com.tw/view/index.html" class="btn btn-primary">See it</a>
+                <a href="http://service.machiningcenter.com.tw/view/index.html" class="btn btn-primary" :disabled="open">See it</a>
               </div>
             </div>
             <!--CARD 客戶拜訪-->
@@ -787,7 +787,7 @@
                   2. Chairman memorial hall, App Store, Taichung Show...etc.
                 </p>
                 <BR>
-                <a href="http://appstore.hartford.com.tw/view/index.html" class="btn btn-primary">See it</a>
+                <a href="http://appstore.hartford.com.tw/view/index.html" class="btn btn-primary" :disabled="open">See it</a>
               </div>
             </div> 
             <!--CARD END-->
@@ -804,6 +804,7 @@
     el: "#app",
     data: {
         isEng: false,
+        open: true,
     },
     methods: {
 
